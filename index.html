@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prince-Solomon Boadu | Transportation and Supply Chain Research</title>
+<meta name="description" content="Ph.D. candidate in Transportation and Supply Chain Management at North Dakota State University. Research on smart ports and sustainable supply chains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2d3d;--mist:#eef2f1;--teal:#1f6f6b;--signal:#f2c230;--line:#c9d4d2;--soft:#4b6470;--sans:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--ink);font:400 1.125rem/1.65 var(--serif)}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--ink);background:var(--signal)}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.pad{padding-left:clamp(1rem,5vw,4rem);padding-right:clamp(1rem,5vw,4rem)}
+header{background:var(--ink);color:var(--mist)}
+header a{color:var(--mist)}
+header a:hover{color:var(--ink)}
+.bar{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.1rem;padding-bottom:1.1rem;font:500 1rem var(--sans)}
+.bar b{font-weight:800}
+.bar nav a{margin-left:1.25rem;text-decoration:none}
+.hero{max-width:74rem;padding-top:clamp(3rem,9vw,6.5rem);padding-bottom:3.5rem}
+h1{font:800 clamp(2.6rem,8.5vw,6.2rem)/.96 var(--sans);letter-spacing:-.03em;margin:0}
+.role{font:500 1.3rem/1.4 var(--sans);margin:1.25rem 0 0}
+.tag{max-width:40rem;margin:1.25rem 0 0;font-size:1.3rem;opacity:.92}
+.status{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.75rem;padding:.45rem .9rem;border:1px solid var(--signal);border-radius:2rem;font:500 .95rem var(--sans)}
+.status::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--signal)}
+.route{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.5rem;padding-top:1.75rem;position:relative}
+.route::before{content:"";position:absolute;top:.5rem;left:0;right:0;height:2px;background:var(--signal);transform-origin:left;animation:draw 2.4s .3s ease-out both}
+.stop{position:relative;font-size:1rem;line-height:1.4}
+.stop::before{content:"";position:absolute;top:-1.75rem;left:0;width:1rem;height:1rem;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--ink)}
+.stop b{display:block;font:800 1.15rem var(--sans)}
+.stop i{display:block;opacity:.7;margin-top:.2rem}
+@keyframes draw{from{transform:scaleX(0)}}
+@media(prefers-reduced-motion:reduce){.route::before{animation:none}}
+main{max-width:80rem;margin:auto}
+section{display:grid;grid-template-columns:minmax(9rem,1fr) 3.2fr;gap:2rem;padding-top:3.5rem;padding-bottom:3.5rem;border-top:1px solid var(--line)}
+section:first-child{border-top:0}
+h2{font:800 1.6rem var(--sans);margin:0;position:sticky;top:1rem;align-self:start}
+h3{font:600 1.15rem/1.35 var(--sans);margin:0}
+p{margin:0 0 1rem;max-width:42rem}
+.item{margin-bottom:2rem}
+.meta{color:var(--soft);font-size:1rem}
+ul{margin:.6rem 0 0;padding-left:1.2rem;max-width:42rem}
+li{margin-bottom:.35rem}
+.pub{display:grid;grid-template-columns:4rem 1fr;gap:1rem}
+.pub .y{font:800 1.05rem var(--sans);color:var(--teal)}
+footer{background:var(--ink);color:var(--mist);padding-top:3rem;padding-bottom:3rem}
+footer .in{max-width:80rem;margin:auto;font-size:1.05rem}
+footer h2{position:static;margin-bottom:.75rem}
+footer a{color:var(--signal)}
+footer a:hover{color:var(--ink)}
+@media(max-width:720px){section{grid-template-columns:1fr;gap:1rem}h2{position:static}.route{gap:.5rem}.stop{font-size:.9rem}.bar nav a{margin:0 1rem 0 0}}
+</style>
+</head>
+<body>
+<div id="app"><p class="pad" style="padding-top:3rem">Loading…</p></div>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const safe=u=>/^(https?:|mailto:)/i.test(u)?esc(u):'#';
+const id=s=>s.toLowerCase().replace(/[^a-z]+/g,'-');
+function sec(title,html){return html?`<section id="${id(title)}" class="pad"><h2>${esc(title)}</h2><div>${html}</div></section>`:''}
+function render(d){
+  document.title=`${d.name} | ${d.role}`;
+  const bio=(d.bio||[]).map(p=>`<p>${esc(p)}</p>`).join('');
+  const research=(d.research||[]).map(r=>`<div class="item"><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p></div>`).join('');
+  const pubs=(d.publications||[]).map(p=>`<div class="item pub"><span class="y">${esc(p.year)}</span><div><h3>${p.url?`<a href="${safe(p.url)}" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3><div class="meta">${esc(p.authors)}</div><div class="meta"><em>${esc(p.venue)}</em></div></div></div>`).join('');
+  const exp=(d.experience||[]).map(e=>`<div class="item"><h3>${esc(e.role)}, ${esc(e.org)}</h3><div class="meta">${esc([e.place,e.dates].filter(Boolean).join(', '))}</div><ul>${(e.points||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
+  const edu=(d.education||[]).map(e=>`<div class="item"><h3>${esc(e.degree)}, ${esc(e.field)}</h3><div class="meta">${esc(e.school)}, ${esc(e.dates)}</div></div>`).join('');
+  const talks=(d.talks||[]).map(t=>`<div class="item"><h3>${esc(t.event)}</h3><div class="meta">${esc([t.place,t.date].filter(Boolean).join(', '))}</div></div>`).join('');
+  const comm=(d.community||[]).map(c=>`<div class="item"><h3>${esc(c.role)}, ${esc(c.org)}</h3><div class="meta">${esc(c.dates)}</div><p>${esc(c.text)}</p></div>`).join('');
+  const nav=[['About',bio],['Research',research],['Publications',pubs],['Experience',exp],['Education',edu],['Talks',talks],['Community',comm]].filter(x=>x[1]);
+  const route=(d.journey||[]).length?`<div class="route">${d.journey.map(j=>`<div class="stop"><b>${esc(j.place)}</b>${esc(j.what)}<i>${esc(j.years)}</i></div>`).join('')}</div>`:'';
+  const links=(d.links||[]).map(l=>`<a href="${safe(l.url)}" rel="noopener">${esc(l.label)}</a>`).join(' &nbsp; ');
+  document.getElementById('app').innerHTML=`
+  <header><div class="bar pad"><b>${esc(d.name)}</b><nav>${nav.map(n=>`<a href="#${id(n[0])}">${n[0]}</a>`).join('')}<a href="#contact">Contact</a></nav></div>
+  <div class="hero pad"><h1>${esc(d.name)}</h1><p class="role">${esc(d.role)}, ${esc(d.affiliation)}</p><p class="tag">${esc(d.tagline)}</p>${d.status?`<div class="status">${esc(d.status)}</div>`:''}${route}</div></header>
+  <main>${nav.map(n=>sec(n[0],n[1])).join('')}</main>
+  <footer class="pad" id="contact"><div class="in"><h2>Contact</h2><p>${d.email?`<a href="mailto:${esc(d.email)}">${esc(d.email)}</a><br>`:''}${esc(d.location)}</p><p>${links}</p></div></footer>`;
+}
+fetch('content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(render)
+ .catch(()=>{document.getElementById('app').innerHTML='<p class="pad" style="padding-top:3rem">Content could not be loaded. Open this site through its web address rather than as a local file.</p>'});
+</script>
+</body>
+</html>

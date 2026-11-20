@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Site editor</title>
+<style>
+:root{--ink:#0f2d3d;--mist:#eef2f1;--teal:#1f6f6b;--signal:#f2c230;--line:#c9d4d2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+.w{max-width:52rem;margin:auto;padding:1rem 1rem 6rem}
+h1{font-size:1.6rem}
+h2{font-size:1.2rem;margin:2.5rem 0 .5rem;padding-top:1rem;border-top:2px solid var(--ink)}
+label{display:block;margin:.7rem 0 0;font-weight:600;font-size:.9rem}
+input,textarea{display:block;width:100%;margin-top:.25rem;padding:.55rem;border:1px solid #8aa0a6;border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:5rem}
+fieldset{margin:1rem 0;padding:.5rem 1rem 1rem;border:1px solid var(--line);border-radius:8px;background:#fff}
+legend{font-weight:700;padding:0 .4rem}
+button{font:inherit;font-weight:600;padding:.5rem .9rem;border:2px solid var(--ink);border-radius:6px;background:#fff;color:var(--ink);cursor:pointer;margin:.6rem .4rem 0 0}
+button.p{background:var(--ink);color:#fff}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;padding:.7rem 1rem;display:flex;gap:1rem;align-items:center;justify-content:center}
+.bar button{margin:0;border-color:var(--signal)}
+.bar button.p{background:var(--signal);color:var(--ink)}
+.note{font-size:.9rem;color:#4b6470}
+#msg{min-height:1.4rem}
+.err{color:#a3261b;font-weight:600}
+.ok{color:#1f6f3b;font-weight:600}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>Site editor</h1>
+<div id="login">
+  <p>Sign in with your GitHub repository and a personal access token. The token stays in this browser tab only and is cleared when you close it.</p>
+  <label>Repository (owner/name)<input id="repo" placeholder="yourusername/yourusername.github.io"></label>
+  <label>Branch<input id="branch" value="main"></label>
+  <label>Access token<input id="tok" type="password" autocomplete="off"></label>
+  <button class="p" id="go">Connect</button>
+  <p id="msg" role="status"></p>
+</div>
+<div id="ed" hidden>
+  <div id="form"></div>
+  <div class="bar"><span id="msg2" role="status"></span><button class="p" id="save">Save changes</button></div>
+</div>
+</div>
+<script>
+const TOP=[['name','Name'],['role','Role'],['affiliation','Affiliation'],['tagline','Headline sentence','area'],['status','Availability note (leave empty to hide)'],['email','Email'],['location','Location'],['bio','About you (one paragraph per line)','lines']];
+const LISTS={
+ journey:{label:'Career route (shown in the page header)',t:'place',f:[['place','Place'],['what','What you did there'],['years','Years']]},
+ research:{label:'Research themes',t:'title',f:[['title','Theme'],['text','Description','area']]},
+ publications:{label:'Publications',t:'title',f:[['year','Year'],['authors','Authors'],['title','Title','area'],['venue','Journal or conference'],['url','Link (DOI), optional']]},
+ experience:{label:'Experience',t:'role',f:[['role','Role'],['org','Organization'],['place','Place'],['dates','Dates'],['points','Highlights (one per line)','lines']]},
+ education:{label:'Education',t:'degree',f:[['degree','Degree'],['school','School'],['dates','Dates'],['field','Field']]},
+ talks:{label:'Talks and presentations',t:'event',f:[['event','Event'],['place','Place'],['date','Date']]},
+ community:{label:'Community',t:'role',f:[['role','Role'],['org','Organization'],['dates','Dates'],['text','Description','area']]},
+ links:{label:'Links (footer)',t:'label',f:[['label','Label'],['url','URL']]}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let data,sha,repo,branch,tok;
+$('repo').value=localStorage.getItem('repo')||guessRepo();
+$('branch').value=localStorage.getItem('branch')||'main';
+tok=sessionStorage.getItem('tok')||'';$('tok').value=tok;
+function guessRepo(){const h=location.hostname;if(!h.endsWith('github.io'))return'';const o=h.split('.')[0];const p=location.pathname.split('/')[1];return o+'/'+(p&&p!=='admin'?p:h)}
+async function gh(path,opt={}){
+  const put=opt.method==='PUT';
+  const r=await fetch(`https://api.github.com/repos/${repo}/contents/${path}${put?'':'?ref='+encodeURIComponent(branch)}`,{...opt,headers:{Authorization:'Bearer '+tok,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
+  if(r.status===401||r.status===403)throw new Error('GitHub rejected the token. Check that it has Contents: Read and write access to this repository.');
+  if(r.status===404)throw new Error('Repository, branch or content.json not found. Check the repository name and branch.');
+  if(r.status===409||r.status===422)throw new Error('The file changed on GitHub since you opened the editor. Reload this page and try again.');
+  if(!r.ok)throw new Error('GitHub returned an error ('+r.status+').');
+  return r.json();
+}
+const fromB64=b=>new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\n/g,'')),c=>c.charCodeAt(0)));
+const toB64=s=>{let b='';new TextEncoder().encode(s).forEach(c=>b+=String.fromCharCode(c));return btoa(b)};
+$('go').onclick=async()=>{
+  repo=$('repo').value.trim();branch=$('branch').value.trim()||'main';tok=$('tok').value.trim();
+  $('msg').className='';$('msg').textContent='Connecting…';
+  try{
+    const f=await gh('content.json');sha=f.sha;data=JSON.parse(fromB64(f.content));
+    localStorage.setItem('repo',repo);localStorage.setItem('branch',branch);sessionStorage.setItem('tok',tok);
+    $('login').hidden=true;$('ed').hidden=false;draw();
+  }catch(e){$('msg').className='err';$('msg').textContent=e.message}
+};
+function field(p,label,type,val){
+  const v=type==='lines'?(val||[]).join('\n'):(val??'');
+  const a=`data-p="${p}" data-t="${type||''}"`;
+  return `<label>${esc(label)}${type?`<textarea ${a}>${esc(v)}</textarea>`:`<input ${a} value="${esc(v)}">`}</label>`;
+}
+function draw(){
+  let h=TOP.map(([k,l,t])=>field(k,l,t,data[k])).join('');
+  for(const [k,L] of Object.entries(LISTS)){
+    h+=`<h2>${esc(L.label)}</h2>`;
+    (data[k]||[]).forEach((it,i)=>{
+      h+=`<fieldset><legend>${esc(it[L.t]||'New entry')}</legend>${L.f.map(([f,l,t])=>field(`${k}.${i}.${f}`,l,t,it[f])).join('')}
+      <button data-a="up" data-l="${k}" data-i="${i}">Move up</button><button data-a="down" data-l="${k}" data-i="${i}">Move down</button><button data-a="del" data-l="${k}" data-i="${i}">Remove</button></fieldset>`;
+    });
+    h+=`<button data-a="add" data-l="${k}">Add entry</button>`;
+  }
+  $('form').innerHTML=h;
+}
+$('form').addEventListener('input',e=>{
+  const p=e.target.dataset.p;if(!p)return;
+  const parts=p.split('.');let o=data;
+  while(parts.length>1)o=o[parts.shift()];
+  o[parts[0]]=e.target.dataset.t==='lines'?e.target.value.split('\n').filter(x=>x.trim()):e.target.value;
+});
+$('form').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const {a,l,i}=b.dataset;const arr=data[l]=data[l]||[];const n=+i;
+  if(a==='add')arr.push(Object.fromEntries(LISTS[l].f.map(([f,,t])=>[f,t==='lines'?[]:''])));
+  if(a==='del'&&confirm('Remove this entry?'))arr.splice(n,1);
+  if(a==='up'&&n>0)[arr[n-1],arr[n]]=[arr[n],arr[n-1]];
+  if(a==='down'&&n<arr.length-1)[arr[n+1],arr[n]]=[arr[n],arr[n+1]];
+  draw();
+});
+$('save').onclick=async()=>{
+  $('msg2').className='';$('msg2').textContent='Saving…';
+  try{
+    const r=await gh('content.json',{method:'PUT',body:JSON.stringify({message:'Update content from site editor',content:toB64(JSON.stringify(data,null,2)+'\n'),sha,branch})});
+    sha=r.content.sha;$('msg2').className='ok';$('msg2').textContent='Saved. The live site updates in about a minute.';
+  }catch(e){$('msg2').className='err';$('msg2').textContent=e.message}
+};
+</script>
+</body>
+</html>
