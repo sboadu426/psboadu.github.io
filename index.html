@@ -4,85 +4,282 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Prince-Solomon Boadu | Transportation and Supply Chain Research</title>
-<meta name="description" content="Ph.D. candidate in Transportation and Supply Chain Management at North Dakota State University. Research on smart ports and sustainable supply chains.">
+<meta name="description" content="Ph.D. candidate in Transportation and Supply Chain Management at North Dakota State University. Research on smart ports, inland waterways and sustainable supply chains.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Prince-Solomon Boadu">
+<meta property="og:description" content="Transportation and supply chain researcher studying smart ports, inland waterways and sustainable freight.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0f2d3d;--mist:#eef2f1;--teal:#1f6f6b;--signal:#f2c230;--line:#c9d4d2;--soft:#4b6470;--sans:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif}
+:root{--navy:#0c3a5a;--blue:#175c8c;--blue2:#1f6ea3;--gold:#e2b04a;--gold2:#a8741c;--brown:#1c1411;--paper:#faf7f2;--side:#d7e0ea;--ink:#173a57;--text:#2a3a47;--sand:#f1e6d0;--line:#d8d2c6;--sans:'Source Sans 3',system-ui,sans-serif;--serif:'Fraunces',Georgia,serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--mist);color:var(--ink);font:400 1.125rem/1.65 var(--serif)}
-a{color:var(--teal);text-underline-offset:3px}
-a:hover{color:var(--ink);background:var(--signal)}
-:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
-.pad{padding-left:clamp(1rem,5vw,4rem);padding-right:clamp(1rem,5vw,4rem)}
-header{background:var(--ink);color:var(--mist)}
-header a{color:var(--mist)}
-header a:hover{color:var(--ink)}
-.bar{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.1rem;padding-bottom:1.1rem;font:500 1rem var(--sans)}
-.bar b{font-weight:800}
-.bar nav a{margin-left:1.25rem;text-decoration:none}
-.hero{max-width:74rem;padding-top:clamp(3rem,9vw,6.5rem);padding-bottom:3.5rem}
-h1{font:800 clamp(2.6rem,8.5vw,6.2rem)/.96 var(--sans);letter-spacing:-.03em;margin:0}
-.role{font:500 1.3rem/1.4 var(--sans);margin:1.25rem 0 0}
-.tag{max-width:40rem;margin:1.25rem 0 0;font-size:1.3rem;opacity:.92}
-.status{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.75rem;padding:.45rem .9rem;border:1px solid var(--signal);border-radius:2rem;font:500 .95rem var(--sans)}
-.status::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--signal)}
-.route{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.5rem;padding-top:1.75rem;position:relative}
-.route::before{content:"";position:absolute;top:.5rem;left:0;right:0;height:2px;background:var(--signal);transform-origin:left;animation:draw 2.4s .3s ease-out both}
-.stop{position:relative;font-size:1rem;line-height:1.4}
-.stop::before{content:"";position:absolute;top:-1.75rem;left:0;width:1rem;height:1rem;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--ink)}
-.stop b{display:block;font:800 1.15rem var(--sans)}
-.stop i{display:block;opacity:.7;margin-top:.2rem}
-@keyframes draw{from{transform:scaleX(0)}}
-@media(prefers-reduced-motion:reduce){.route::before{animation:none}}
-main{max-width:80rem;margin:auto}
-section{display:grid;grid-template-columns:minmax(9rem,1fr) 3.2fr;gap:2rem;padding-top:3.5rem;padding-bottom:3.5rem;border-top:1px solid var(--line)}
-section:first-child{border-top:0}
-h2{font:800 1.6rem var(--sans);margin:0;position:sticky;top:1rem;align-self:start}
-h3{font:600 1.15rem/1.35 var(--sans);margin:0}
-p{margin:0 0 1rem;max-width:42rem}
-.item{margin-bottom:2rem}
-.meta{color:var(--soft);font-size:1rem}
-ul{margin:.6rem 0 0;padding-left:1.2rem;max-width:42rem}
-li{margin-bottom:.35rem}
-.pub{display:grid;grid-template-columns:4rem 1fr;gap:1rem}
-.pub .y{font:800 1.05rem var(--sans);color:var(--teal)}
-footer{background:var(--ink);color:var(--mist);padding-top:3rem;padding-bottom:3rem}
-footer .in{max-width:80rem;margin:auto;font-size:1.05rem}
-footer h2{position:static;margin-bottom:.75rem}
-footer a{color:var(--signal)}
-footer a:hover{color:var(--ink)}
-@media(max-width:720px){section{grid-template-columns:1fr;gap:1rem}h2{position:static}.route{gap:.5rem}.stop{font-size:.9rem}.bar nav a{margin:0 1rem 0 0}}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}body{margin:0;background:var(--navy);color:var(--text);font:400 1rem/1.6 var(--sans)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;background:var(--paper);min-height:100vh;overflow-x:hidden}
+/* banner */
+.banner{position:relative;background:var(--blue);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 34px,transparent 34px 68px);color:#fff;overflow:hidden;height:156px}
+.banner svg.art{position:absolute;right:0;bottom:0;height:100%;width:62%;pointer-events:none}
+.brand{position:relative;display:flex;align-items:center;gap:18px;padding:40px 24px 0;text-decoration:none;color:#fff}
+.brand h1{font:700 2.55rem/1.05 var(--serif);margin:0;letter-spacing:.2px}
+.brand small{display:block;margin-top:6px;font:600 .8rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#d6e6f2}
+.logo{flex:none;width:58px;height:58px}
+nav.main{background:var(--brown);display:flex;flex-wrap:wrap}
+nav.main a{flex:1 1 auto;text-align:center;padding:.8rem 1rem;color:#fff;text-decoration:none;font:600 .95rem var(--sans);border-right:1px solid #3a2e29;border-bottom:3px solid transparent}
+nav.main a:last-child{border-right:0}
+nav.main a:hover{background:#2c211c}
+nav.main a[aria-current=page]{color:var(--gold);border-bottom-color:var(--gold)}
+/* ticker */
+.ticker{display:flex;max-width:100%;align-items:center;background:#fff;border-bottom:1px solid var(--line);overflow:hidden;font-size:.92rem}
+.ticker b{flex:none;background:var(--gold2);color:#fff;font:700 .7rem var(--sans);letter-spacing:.1em;padding:.25rem .55rem;border-radius:3px;margin:.55rem 1rem;position:relative;z-index:1;box-shadow:12px 0 10px #fff}
+.track{display:flex;white-space:nowrap;animation:tick 40s linear infinite}
+.track:hover{animation-play-state:paused}
+.track span{padding-right:3rem}
+.track em{font:700 normal .92rem var(--sans);color:var(--gold2);margin-right:.5rem;font-style:normal}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.track{animation:none}}
+/* layout */
+.page{padding:20px;display:grid;grid-template-columns:minmax(0,1fr) 262px;gap:24px}
+.page.solo{grid-template-columns:minmax(0,1fr)}
+h2.sec{font:700 1.65rem/1.2 var(--serif);color:var(--ink);margin:2rem 0 1rem;padding-bottom:.35rem;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+h2.sec:first-child{margin-top:.2rem}
+h2.sec small{font:400 .85rem var(--sans);color:#6a7882}
+.live{font:700 .68rem var(--sans);letter-spacing:.08em;color:#1d7a4a;background:#dcf2e5;border-radius:4px;padding:.1rem .45rem;margin-left:.6rem;vertical-align:middle}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px}
+.intro{display:flow-root}
+.intro .photo{float:left;width:188px;height:250px;margin:0 22px 8px 0;border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.25);object-fit:cover;background:var(--blue);color:var(--gold);font:700 4rem var(--serif);display:flex;align-items:center;justify-content:center}
+.lead{font:600 1.2rem/1.5 var(--sans);color:var(--ink);margin:0 0 .9rem}
+.chips,.tags{display:flex;flex-wrap:wrap;gap:.5rem;clear:both;margin-top:1rem}
+.chips a{border:1px solid var(--line);border-radius:999px;padding:.2rem .85rem;font-size:.9rem;text-decoration:none;color:var(--ink);background:#fff}
+.chips a:hover{background:var(--sand)}
+.tags span{background:var(--sand);color:#5b4624;font-size:.85rem;padding:.2rem .7rem;border-radius:4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:6px;text-align:center;padding:16px 8px}
+.stat b{display:block;font:700 2rem/1.1 var(--serif);color:var(--ink)}
+.stat span{font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;color:#6a7882}
+.stat i{font-style:normal;color:#1d7a4a;font-size:.6rem;margin-left:.2rem}
+.chart h3{font:700 1.15rem var(--serif);color:var(--ink);margin:0}
+.chart p.sub{margin:.1rem 0 .6rem;color:#6a7882;font-size:.9rem}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:1rem;font-size:.85rem;margin-bottom:.4rem}
+.legend i{display:inline-block;width:.7rem;height:.7rem;margin-right:.35rem;border-radius:2px}
+.hbar{display:grid;grid-template-columns:minmax(120px,36%) 1fr 2rem;gap:.7rem;align-items:center;font-size:.88rem;margin:.4rem 0}
+.hbar .t{text-align:right}
+.hbar .b{height:12px;background:var(--sand);border-radius:6px;overflow:hidden}
+.hbar .b div{height:100%;background:var(--blue);border-radius:6px}
+.impact{display:grid;grid-template-columns:230px 1fr;gap:20px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini div{background:var(--paper);border-radius:6px;text-align:center;padding:12px 4px}
+.mini b{display:block;font:700 1.6rem var(--serif);color:var(--ink)}
+.mini span{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:#6a7882}
+.src{font-size:.82rem;color:#6a7882;margin:.9rem 0 0}
+.journey{margin-top:2rem;background:var(--blue);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 34px,transparent 34px 68px);border-radius:8px;color:#fff;padding:20px 22px 26px}
+.journey h2{font:700 1.2rem var(--serif);margin:0 0 .4rem}
+.jrow{position:relative;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;padding-top:30px}
+.jrow svg{position:absolute;left:0;top:0;width:100%;height:60px}
+.jrow>div{position:relative;font-size:.85rem}
+.jrow .n{display:grid;place-items:center;width:26px;height:26px;margin:0 auto 6px;border:2px solid var(--gold);border-radius:50%;background:var(--blue);font:700 .75rem var(--sans)}
+.jrow b{display:block;font:700 1.05rem var(--serif)}
+.jrow em{display:block;color:var(--gold);font:700 .8rem var(--sans);font-style:normal}
+/* sidebar */
+aside{font-size:.92rem}
+.box{background:var(--side);border-radius:4px;margin-bottom:12px;padding:14px 14px 12px}
+.box h3{font:700 1rem var(--sans);color:var(--ink);margin:0 0 .6rem;padding-bottom:.35rem;border-bottom:1px dotted #8ba0b4}
+.box.dark{background:var(--blue2);background:#175c8c;color:#fff}
+.box.dark h3{color:#fff;border-color:#5f8fb4}
+.box.dark a{color:#fff}
+.news p{margin:0 0 .6rem;padding-bottom:.6rem;border-bottom:1px dotted #8ba0b4;line-height:1.4}
+.news p:last-child{border:0;margin:0;padding:0}
+.news b{color:var(--gold2)}
+.mb{display:flex;gap:12px;align-items:flex-start}
+.mb .ic{flex:none;width:76px;height:76px;border-radius:3px;background:var(--sand);display:grid;place-items:center}
+.mb .ic.d{background:#175c8c}
+.box.dark .ic{background:var(--sand)}
+.mb p{margin:0;line-height:1.4}
+.more{display:block;text-align:right;font-weight:700;font-size:.82rem;margin-top:.5rem;text-decoration:none}
+/* inner pages */
+.item{margin-bottom:1.6rem;max-width:44rem}
+.item h3{font:700 1.15rem/1.35 var(--serif);color:var(--ink);margin:0}
+.item h3 a{color:var(--ink)}
+.meta{color:#667682;font-size:.95rem}
+.item ul{margin:.5rem 0 0;padding-left:1.2rem}
+.pub{display:grid;grid-template-columns:3.6rem 1fr;gap:.75rem}
+.pub .y{font:700 1.1rem var(--serif);color:var(--gold2)}
+.badge{display:inline-block;background:var(--sand);color:#5b4624;font-size:.75rem;padding:.05rem .5rem;border-radius:4px;margin-left:.4rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.gal figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gal figcaption{padding:.6rem .8rem;font-size:.9rem}
+.empty{background:#fff;border:1px dashed #b9b2a3;border-radius:6px;padding:1.5rem;max-width:40rem}
+footer{background:var(--brown);color:#e8dfd6;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 1.5rem;padding:22px 20px;font-size:.9rem}
+footer a{color:#fff;text-decoration:none;margin-right:1rem}
+footer a:hover{text-decoration:underline}
+footer .r a{margin:0}
+@media(max-width:820px){.page{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.impact{grid-template-columns:1fr}.banner svg.art{width:100%;opacity:.35}.brand h1{font-size:1.9rem}nav.main a{padding:.7rem .6rem;font-size:.88rem}.intro .photo{width:130px;height:174px;font-size:3rem}}
 </style>
 </head>
 <body>
-<div id="app"><p class="pad" style="padding-top:3rem">Loading…</p></div>
+<div class="wrap" id="app"><p style="padding:2rem;color:#555">Loading…</p></div>
 <script>
+const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const safe=u=>/^(https?:|mailto:)/i.test(u)?esc(u):'#';
-const id=s=>s.toLowerCase().replace(/[^a-z]+/g,'-');
-function sec(title,html){return html?`<section id="${id(title)}" class="pad"><h2>${esc(title)}</h2><div>${html}</div></section>`:''}
-function render(d){
-  document.title=`${d.name} | ${d.role}`;
-  const bio=(d.bio||[]).map(p=>`<p>${esc(p)}</p>`).join('');
-  const research=(d.research||[]).map(r=>`<div class="item"><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p></div>`).join('');
-  const pubs=(d.publications||[]).map(p=>`<div class="item pub"><span class="y">${esc(p.year)}</span><div><h3>${p.url?`<a href="${safe(p.url)}" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3><div class="meta">${esc(p.authors)}</div><div class="meta"><em>${esc(p.venue)}</em></div></div></div>`).join('');
-  const exp=(d.experience||[]).map(e=>`<div class="item"><h3>${esc(e.role)}, ${esc(e.org)}</h3><div class="meta">${esc([e.place,e.dates].filter(Boolean).join(', '))}</div><ul>${(e.points||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
-  const edu=(d.education||[]).map(e=>`<div class="item"><h3>${esc(e.degree)}, ${esc(e.field)}</h3><div class="meta">${esc(e.school)}, ${esc(e.dates)}</div></div>`).join('');
-  const talks=(d.talks||[]).map(t=>`<div class="item"><h3>${esc(t.event)}</h3><div class="meta">${esc([t.place,t.date].filter(Boolean).join(', '))}</div></div>`).join('');
-  const comm=(d.community||[]).map(c=>`<div class="item"><h3>${esc(c.role)}, ${esc(c.org)}</h3><div class="meta">${esc(c.dates)}</div><p>${esc(c.text)}</p></div>`).join('');
-  const nav=[['About',bio],['Research',research],['Publications',pubs],['Experience',exp],['Education',edu],['Talks',talks],['Community',comm]].filter(x=>x[1]);
-  const route=(d.journey||[]).length?`<div class="route">${d.journey.map(j=>`<div class="stop"><b>${esc(j.place)}</b>${esc(j.what)}<i>${esc(j.years)}</i></div>`).join('')}</div>`:'';
-  const links=(d.links||[]).map(l=>`<a href="${safe(l.url)}" rel="noopener">${esc(l.label)}</a>`).join(' &nbsp; ');
-  document.getElementById('app').innerHTML=`
-  <header><div class="bar pad"><b>${esc(d.name)}</b><nav>${nav.map(n=>`<a href="#${id(n[0])}">${n[0]}</a>`).join('')}<a href="#contact">Contact</a></nav></div>
-  <div class="hero pad"><h1>${esc(d.name)}</h1><p class="role">${esc(d.role)}, ${esc(d.affiliation)}</p><p class="tag">${esc(d.tagline)}</p>${d.status?`<div class="status">${esc(d.status)}</div>`:''}${route}</div></header>
-  <main>${nav.map(n=>sec(n[0],n[1])).join('')}</main>
-  <footer class="pad" id="contact"><div class="in"><h2>Contact</h2><p>${d.email?`<a href="mailto:${esc(d.email)}">${esc(d.email)}</a><br>`:''}${esc(d.location)}</p><p>${links}</p></div></footer>`;
+const safe=u=>/^(https?:|mailto:|assets\/)/i.test(u||'')?esc(u):'';
+const ROUTES=[['home','Home'],['research','Research'],['publications','Publications'],['resources','Resources'],['teaching','Teaching'],['gallery','Gallery'],['contact','Contact']];
+let D,IMPACT=null;
+
+const ART=`<svg class="art" viewBox="0 0 640 156" preserveAspectRatio="xMaxYMax meet" aria-hidden="true">
+<path d="M40 120 C200 10 380 10 600 70" fill="none" stroke="#cfe3f2" stroke-width="1.4" stroke-dasharray="5 6" opacity=".7"/>
+<g transform="translate(340 14) rotate(8)" fill="#e9f3fa"><path d="M0 6 L28 6 L36 0 L40 0 L35 6 L44 8 L35 10 L40 16 L36 16 L28 10 L0 10 Z"/></g>
+<g fill="#cfe3f2"><rect x="180" y="82" width="104" height="40"/><path d="M172 84 L232 56 L292 84 Z"/></g>
+<g fill="#175c8c"><rect x="192" y="96" width="20" height="26"/><rect x="220" y="96" width="20" height="26"/><rect x="248" y="96" width="20" height="26"/></g>
+<g transform="translate(60 100)"><rect width="46" height="22" rx="2" fill="#e9f3fa"/><rect x="46" y="6" width="22" height="16" rx="2" fill="#cfe3f2"/><circle cx="14" cy="24" r="6" fill="#0c3a5a" stroke="#e9f3fa" stroke-width="2"/><circle cx="56" cy="24" r="6" fill="#0c3a5a" stroke="#e9f3fa" stroke-width="2"/></g>
+<g transform="translate(360 40)"><rect x="2" y="0" width="150" height="4" fill="#e9f3fa"/><path d="M118 0 V80 M138 0 V80 M118 20 H138 M118 40 H138 M118 60 H138" stroke="#e9f3fa" stroke-width="2" fill="none"/><path d="M118 4 L60 4" stroke="#e9f3fa" stroke-width="2"/><rect x="40" y="6" width="14" height="10" fill="#e2b04a"/></g>
+<g transform="translate(340 84)"><path d="M0 28 H190 L174 50 H18 Z" fill="#e9f3fa"/><g fill="#e2b04a"><rect x="30" y="8" width="26" height="20"/><rect x="58" y="8" width="26" height="20"/><rect x="86" y="8" width="26" height="20"/></g><g fill="#9cc2dd"><rect x="44" y="-12" width="26" height="20"/><rect x="72" y="-12" width="26" height="20"/></g><rect x="136" y="-8" width="24" height="36" fill="#cfe3f2"/><rect x="144" y="-20" width="8" height="12" fill="#cfe3f2"/></g>
+<path d="M300 140 q10-6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#cfe3f2" stroke-width="2" opacity=".6"/>
+</svg>`;
+const LOGO=`<svg class="logo" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#0c3a5a" stroke="#e2b04a" stroke-width="4"/><path d="M16 38 C24 22 34 40 44 22" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M38 20 H45 V27" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const IC={
+ res:'<svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1b4666" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="16" width="24" height="16" rx="2"/><path d="M28 21h8l6 6v5H28"/><circle cx="13" cy="35" r="3.5" fill="#f1e6d0"/><circle cx="35" cy="35" r="3.5" fill="#f1e6d0"/><path d="M8 10h18M12 6h10" stroke="#a8741c"/></svg>',
+ pub:'<svg width="56" height="56" viewBox="0 0 56 56"><g fill="#e2b04a"><rect x="8" y="42" width="6" height="3"/><rect x="18" y="42" width="6" height="3"/><rect x="28" y="30" width="6" height="15"/><rect x="38" y="16" width="6" height="29"/><rect x="48" y="24" width="4" height="21"/></g></svg>',
+ tea:'<svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#1b4666" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 24 9l20 9-20 9z"/><path d="M12 22v10c4 4 20 4 24 0V22"/><path d="M44 18v12" stroke="#a8741c"/></svg>',
+ mail:'<svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#e2b04a" stroke-width="2.4" stroke-linejoin="round"><rect x="6" y="11" width="36" height="26" rx="3"/><path d="m6 14 18 14 18-14"/></svg>'
+};
+
+function route(){const h=(location.hash.replace(/^#\/?/,'')||'home');return ROUTES.some(r=>r[0]===h)?h:'home'}
+const initials=n=>n.split(/[\s-]+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase();
+
+/* charts */
+function stackedYears(pubs){
+  const ys=pubs.map(p=>+p.year).filter(Boolean);if(!ys.length)return'';
+  const a=Math.min(...ys),b=Math.max(...ys);const rows=[];
+  for(let y=a;y<=b;y++){const f=pubs.filter(p=>+p.year===y);rows.push({y,j:f.filter(p=>p.type!=='conference').length,c:f.filter(p=>p.type==='conference').length})}
+  const max=Math.max(4,...rows.map(r=>r.j+r.c)),top=Math.ceil(max/5)*5||5,W=640,H=250,L=36,B=26,T=14,pw=W-L-10,ph=H-B-T,bw=Math.min(48,pw/rows.length*.6);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Publications per year">`;
+  for(let i=0;i<=4;i++){const v=top/4*i,y=T+ph-ph*v/top;s+=`<line x1="${L}" x2="${W-10}" y1="${y}" y2="${y}" stroke="#e7e0d2"/><text x="${L-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#667682">${Math.round(v)}</text>`}
+  rows.forEach((r,i)=>{const cx=L+pw/rows.length*(i+.5),hj=ph*r.j/top,hc=ph*r.c/top,x=cx-bw/2;
+    if(r.j)s+=`<rect x="${x}" y="${T+ph-hj}" width="${bw}" height="${hj}" fill="#1f6ea3"/>`;
+    if(r.c)s+=`<rect x="${x}" y="${T+ph-hj-hc}" width="${bw}" height="${hc}" fill="#a8741c"/>`;
+    if(r.j+r.c)s+=`<text x="${cx}" y="${T+ph-hj-hc-5}" text-anchor="middle" font-size="12" font-weight="600" fill="#173a57">${r.j+r.c}</text>`;
+    s+=`<text x="${cx}" y="${H-8}" text-anchor="middle" font-size="12" fill="#667682">${r.y}</text>`});
+  return s+'</svg>';
 }
-fetch('content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(render)
- .catch(()=>{document.getElementById('app').innerHTML='<p class="pad" style="padding-top:3rem">Content could not be loaded. Open this site through its web address rather than as a local file.</p>'});
+function citeChart(byYear){
+  const ys=Object.keys(byYear).map(Number).sort((a,b)=>a-b);if(!ys.length)return'';
+  const cur=new Date().getFullYear(),a=Math.min(...ys),b=Math.max(cur,...ys),rows=[];
+  for(let y=a;y<=b;y++)rows.push([y,byYear[y]||0]);
+  const max=Math.max(...rows.map(r=>r[1]),4),top=Math.ceil(max/4)*4,W=420,H=170,L=30,B=22,T=14,pw=W-L-6,ph=H-B-T,bw=Math.min(38,pw/rows.length*.6);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Citations per year">`;
+  for(let i=0;i<=4;i++){const v=top/4*i,y=T+ph-ph*v/top;s+=`<line x1="${L}" x2="${W-6}" y1="${y}" y2="${y}" stroke="#e7e0d2"/><text x="${L-6}" y="${y+3}" text-anchor="end" font-size="9" fill="#667682">${Math.round(v)}</text>`}
+  rows.forEach(([y,v],i)=>{const cx=L+pw/rows.length*(i+.5),h=ph*v/top;
+    s+=`<rect x="${cx-bw/2}" y="${T+ph-h}" width="${bw}" height="${h}" fill="#1f6ea3"/>`;
+    if(v)s+=`<text x="${cx}" y="${T+ph-h-4}" text-anchor="middle" font-size="10" font-weight="600" fill="#173a57">${v}</text>`;
+    s+=`<text x="${cx}" y="${H-6}" text-anchor="middle" font-size="10" fill="#667682">${y}${y===cur?'*':''}</text>`});
+  return s+'</svg>';
+}
+function themeBars(pubs){
+  const m={};pubs.forEach(p=>(p.themes||[]).forEach(t=>m[t]=(m[t]||0)+1));
+  const rows=Object.entries(m).sort((a,b)=>b[1]-a[1]);if(!rows.length)return'';const mx=rows[0][1];
+  return rows.map(([t,n])=>`<div class="hbar"><span class="t">${esc(t)}</span><span class="b"><div style="width:${n/mx*100}%"></div></span><span>${n}</span></div>`).join('');
+}
+function journey(j){
+  if(!j||!j.length)return'';
+  return `<div class="journey"><h2>Academic &amp; professional journey</h2><div class="jrow">
+  <svg viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><path id="jp" d="M100 28 C200 -6 260 -6 300 28 C340 -6 400 -6 500 28" fill="none" stroke="#cfe3f2" stroke-width="1.6" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"/><circle r="5" fill="#e2b04a"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#jp"/></animateMotion></circle></svg>
+  ${j.map((x,i)=>`<div><span class="n">${i+1}</span><b>${esc(x.place)}</b><em>${esc(x.label)}</em>${esc(x.dates)}</div>`).join('')}</div></div>`;
+}
+
+/* pages */
+function home(){
+  const jc=D.publications.filter(p=>p.type!=='conference').length,cc=D.publications.length-jc;
+  const photo=D.photo?`<img class="photo" src="${safe(D.photo)}" alt="Portrait of ${esc(D.name)}">`:`<div class="photo" aria-hidden="true">${esc(initials(D.name))}</div>`;
+  const chips=[`<a href="mailto:${esc(D.email)}">✉ ${esc(D.email)}</a>`].concat((D.links||[]).filter(l=>safe(l.url)).map(l=>`<a href="${safe(l.url)}" rel="noopener">${esc(l.label)}</a>`)).join('');
+  const latest=D.publications[0];
+  return `<div class="page"><div>
+   <div class="card intro">${photo}<p class="lead">${esc(D.headline)}</p>${(D.bio||[]).map(p=>`<p>${esc(p)}</p>`).join('')}
+   <div class="chips">${chips}</div><div class="tags">${(D.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div></div>
+   <div class="stats"><div class="stat"><b>${jc}</b><span>Journal articles</span></div><div class="stat"><b>${cc}</b><span>Conference papers</span></div>
+   <div class="stat"><b id="s-c">–</b><span>Citations<i>● LIVE</i></span></div><div class="stat"><b id="s-h">–</b><span>H-index<i>● LIVE</i></span></div></div>
+   <h2 class="sec">Research at a glance</h2>
+   <div class="card chart"><h3>Publications by year</h3><p class="sub">Journal articles and conference papers</p><div class="legend"><span><i style="background:#1f6ea3"></i>Journal</span><span><i style="background:#a8741c"></i>Conference</span></div>${stackedYears(D.publications)}</div>
+   <div class="card chart" style="margin-top:14px"><h3>Research themes</h3><p class="sub">Number of papers touching each theme</p>${themeBars(D.publications)}</div>
+   <div id="impact"></div>
+   ${journey(D.journey)}
+  </div>
+  <aside>
+   <div class="box news"><h3>Latest news</h3>${(D.news||[]).map(n=>`<p><b>${esc(n.date)}</b> ${esc(n.text)}</p>`).join('')||'<p>No news yet.</p>'}</div>
+   <div class="box dark"><h3>Research</h3><div class="mb"><div class="ic">${IC.res}</div><p>${esc((D.research[0]||{}).title||'Research')}, ${esc(((D.research[1]||{}).title||'').toLowerCase())} and more.</p></div><a class="more" href="#/research">read more…</a></div>
+   <div class="box"><h3>Publications</h3><div class="mb"><div class="ic d">${IC.pub}</div><p>${latest?`Latest: <i>${esc(latest.title)}</i>`:'Papers and articles.'}</p></div><a class="more" href="#/publications">read more…</a></div>
+   <div class="box dark"><h3>Teaching</h3><div class="mb"><div class="ic">${IC.tea}</div><p>Lab, tutorial and seminar support at NDSU.</p></div><a class="more" href="#/teaching">read more…</a></div>
+   <div class="box"><h3>Get in touch</h3><div class="mb"><div class="ic d">${IC.mail}</div><p>Open to research collaboration.</p></div><a class="more" href="#/contact">contact me…</a></div>
+  </aside></div>`;
+}
+const solo=h=>`<div class="page solo"><div>${h}</div></div>`;
+function research(){
+  return solo(`<h2 class="sec">Research themes</h2>${(D.research||[]).map(r=>`<div class="item"><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p></div>`).join('')}
+  <h2 class="sec">Research and professional experience</h2>${(D.experience||[]).map(e=>`<div class="item"><h3>${esc(e.role)}, ${esc(e.org)}</h3><div class="meta">${esc([e.place,e.dates].filter(Boolean).join(', '))}</div><ul>${(e.points||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}`);
+}
+function publications(){
+  const list=D.publications.slice().sort((a,b)=>b.year-a.year);
+  return solo(`<h2 class="sec">Publications <small>${list.length} items</small></h2>${list.map(p=>`<div class="item pub"><span class="y">${esc(p.year)}</span><div><h3>${safe(p.url)?`<a href="${safe(p.url)}" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3><div class="meta">${esc(p.authors)}</div><div class="meta"><em>${esc(p.venue)}</em><span class="badge">${p.type==='conference'?'Conference':'Journal'}</span></div></div></div>`).join('')}`);
+}
+function resources(){
+  const res=(D.resources||[]).map(r=>`<div class="item"><h3>${safe(r.url)?`<a href="${safe(r.url)}" rel="noopener">${esc(r.title)}</a>`:esc(r.title)}</h3><p>${esc(r.text)}</p></div>`).join('')||`<div class="empty">Slides, datasets and write-ups will be listed here.</div>`;
+  return solo(`<h2 class="sec">Resources</h2>${res}
+  <h2 class="sec">Education</h2>${(D.education||[]).map(e=>`<div class="item"><h3>${esc(e.degree)}, ${esc(e.field)}</h3><div class="meta">${esc(e.school)}, ${esc(e.dates)}</div></div>`).join('')}
+  <h2 class="sec">Talks and presentations</h2>${(D.talks||[]).map(t=>`<div class="item"><h3>${esc(t.event)}</h3><div class="meta">${esc([t.place,t.date].filter(Boolean).join(', '))}</div></div>`).join('')}
+  <h2 class="sec">Community</h2>${(D.community||[]).map(c=>`<div class="item"><h3>${esc(c.role)}, ${esc(c.org)}</h3><div class="meta">${esc(c.dates)}</div><p>${esc(c.text)}</p></div>`).join('')}`);
+}
+function teaching(){return solo(`<h2 class="sec">Teaching and training</h2>${(D.teaching||[]).map(t=>`<div class="item"><h3>${esc(t.title)}</h3><p>${esc(t.text)}</p></div>`).join('')}`)}
+function gallery(){
+  const g=(D.gallery||[]).filter(x=>safe(x.src));
+  return solo(`<h2 class="sec">Gallery</h2>${g.length?`<div class="gal">${g.map(x=>`<figure><img src="${safe(x.src)}" alt="${esc(x.caption)}" loading="lazy"><figcaption>${esc(x.caption)}</figcaption></figure>`).join('')}</div>`:`<div class="empty">Photos from conferences, field visits and ports will appear here. Add them in the site editor.</div>`}`);
+}
+function contact(){
+  const ls=(D.links||[]).filter(l=>safe(l.url)).map(l=>`<li><a href="${safe(l.url)}" rel="noopener">${esc(l.label)}</a></li>`).join('');
+  return solo(`<h2 class="sec">Get in touch</h2><div class="item"><p>${esc(D.status)}</p><p><a href="mailto:${esc(D.email)}">${esc(D.email)}</a><br>${esc(D.location)}</p>${ls?`<ul>${ls}</ul>`:''}</div>`);
+}
+const PAGES={home,research,publications,resources,teaching,gallery,contact};
+
+function shell(){
+  const r=route();
+  const news=(D.news||[]).map(n=>`<span><em>${esc(n.date)}</em>${esc(n.text)}</span>`).join('');
+  document.title=r==='home'?`${D.name} | Transportation and Supply Chain Research`:`${ROUTES.find(x=>x[0]===r)[1]} | ${D.name}`;
+  $('#app').innerHTML=`<header class="banner">${ART}<a class="brand" href="#/home">${LOGO}<div><h1>${esc(D.name)}</h1><small>${esc(D.subtitle)}</small></div></a></header>
+  <nav class="main" aria-label="Main">${ROUTES.map(([k,l])=>`<a href="#/${k}"${k===r?' aria-current="page"':''}>${l}</a>`).join('')}</nav>
+  ${news?`<div class="ticker"><b>LATEST</b><div class="track">${news}${news}</div></div>`:''}
+  <main>${PAGES[r]()}</main>
+  <footer><div>${ROUTES.map(([k,l])=>`<a href="#/${k}">${l}</a>`).join('')}</div><div class="r">© ${new Date().getFullYear()} ${esc(D.name)} · <a href="admin/">Admin</a></div></footer>`;
+  window.scrollTo(0,0);
+  if(r==='home')paintImpact();
+}
+
+/* live citations from OpenAlex, using the DOIs of the listed publications */
+async function loadImpact(){
+  const dois=[...new Set((D.publications||[]).map(p=>(String(p.url||'').match(/10\.\d{4,9}\/[^\s?#]+/)||[])[0]).filter(Boolean))];
+  if(!dois.length)return;
+  try{
+    const u='https://api.openalex.org/works?per-page=50&select=cited_by_count,counts_by_year&filter=doi:'+dois.map(d=>encodeURIComponent('https://doi.org/'+d)).join('|');
+    const r=await fetch(u);if(!r.ok)throw 0;const j=await r.json();
+    const w=(j.results||[]),cs=w.map(x=>x.cited_by_count||0).sort((a,b)=>b-a);
+    const by={};w.forEach(x=>(x.counts_by_year||[]).forEach(c=>by[c.year]=(by[c.year]||0)+c.cited_by_count));
+    IMPACT={total:cs.reduce((a,b)=>a+b,0),h:cs.filter((c,i)=>c>=i+1).length,i10:cs.filter(c=>c>=10).length,works:w.length,by,when:new Date()};
+    if(route()==='home')paintImpact();
+  }catch(e){}
+}
+function paintImpact(){
+  if(!IMPACT)return;const I=IMPACT;
+  $('#s-c').textContent=I.total;$('#s-h').textContent=I.h;
+  $('#impact').innerHTML=`<h2 class="sec">Research impact<span class="live">● LIVE</span><small>Updates automatically</small></h2>
+  <div class="card impact"><div class="mini"><div><b>${I.total}</b><span>Citations</span></div><div><b>${I.h}</b><span>H-index</span></div><div><b>${I.i10}</b><span>i10-index</span></div><div><b>${I.works}</b><span>Indexed works</span></div></div>
+  <div class="chart"><h3>Citations per year</h3><p class="sub">* current year to date</p>${citeChart(I.by)}</div></div>
+  <p class="src">Source: <a href="https://openalex.org" rel="noopener">OpenAlex</a>, fetched when this page loaded (${I.when.toLocaleString([],{dateStyle:'medium',timeStyle:'short'})}). Counts cover the publications listed on this site and can differ from Google Scholar.</p>`;
+}
+
+addEventListener('hashchange',shell);
+fetch('content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{D=d;shell();loadImpact()})
+ .catch(()=>{$('#app').innerHTML='<p style="padding:2rem">Content could not be loaded. Open this site through its web address rather than as a local file.</p>'});
 </script>
 </body>
 </html>

@@ -13,7 +13,7 @@ body{margin:0;background:var(--mist);color:var(--ink);font:16px/1.5 system-ui,sa
 h1{font-size:1.6rem}
 h2{font-size:1.2rem;margin:2.5rem 0 .5rem;padding-top:1rem;border-top:2px solid var(--ink)}
 label{display:block;margin:.7rem 0 0;font-weight:600;font-size:.9rem}
-input,textarea{display:block;width:100%;margin-top:.25rem;padding:.55rem;border:1px solid #8aa0a6;border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
+input,textarea,select{display:block;width:100%;margin-top:.25rem;padding:.55rem;border:1px solid #8aa0a6;border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
 textarea{min-height:5rem}
 fieldset{margin:1rem 0;padding:.5rem 1rem 1rem;border:1px solid var(--line);border-radius:8px;background:#fff}
 legend{font-weight:700;padding:0 .4rem}
@@ -46,16 +46,20 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px soli
 </div>
 </div>
 <script>
-const TOP=[['name','Name'],['role','Role'],['affiliation','Affiliation'],['tagline','Headline sentence','area'],['status','Availability note (leave empty to hide)'],['email','Email'],['location','Location'],['bio','About you (one paragraph per line)','lines']];
+const TOP=[['name','Name'],['subtitle','Line under your name (banner)'],['headline','Headline sentence','area'],['photo','Portrait','img'],['email','Email'],['location','Location'],['status','Availability note','area'],['bio','About you (one paragraph per line)','lines'],['tags','Keyword chips (one per line)','lines']];
 const LISTS={
- journey:{label:'Career route (shown in the page header)',t:'place',f:[['place','Place'],['what','What you did there'],['years','Years']]},
+ links:{label:'Profile links (Google Scholar, ORCID, LinkedIn). Empty links stay hidden.',t:'label',f:[['label','Label'],['url','URL']]},
+ news:{label:'Latest news (newest first)',t:'text',f:[['date','Date'],['text','Text','area']]},
+ journey:{label:'Journey (three stops work best)',t:'place',f:[['place','City'],['label','Degree or role'],['dates','Dates']]},
  research:{label:'Research themes',t:'title',f:[['title','Theme'],['text','Description','area']]},
- publications:{label:'Publications',t:'title',f:[['year','Year'],['authors','Authors'],['title','Title','area'],['venue','Journal or conference'],['url','Link (DOI), optional']]},
+ publications:{label:'Publications (the DOI link drives the live citation numbers)',t:'title',f:[['year','Year'],['type','Type','sel:journal,conference'],['authors','Authors'],['title','Title','area'],['venue','Journal or conference'],['url','DOI link, for example https://doi.org/10.1000/xyz'],['themes','Themes (one per line)','lines']]},
  experience:{label:'Experience',t:'role',f:[['role','Role'],['org','Organization'],['place','Place'],['dates','Dates'],['points','Highlights (one per line)','lines']]},
  education:{label:'Education',t:'degree',f:[['degree','Degree'],['school','School'],['dates','Dates'],['field','Field']]},
  talks:{label:'Talks and presentations',t:'event',f:[['event','Event'],['place','Place'],['date','Date']]},
  community:{label:'Community',t:'role',f:[['role','Role'],['org','Organization'],['dates','Dates'],['text','Description','area']]},
- links:{label:'Links (footer)',t:'label',f:[['label','Label'],['url','URL']]}
+ teaching:{label:'Teaching',t:'title',f:[['title','Title'],['text','Description','area']]},
+ resources:{label:'Resources (slides, datasets, write-ups)',t:'title',f:[['title','Title'],['text','Description','area'],['url','Link or file path']]},
+ gallery:{label:'Gallery photos',t:'caption',f:[['src','Photo','img'],['caption','Caption']]}
 };
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -85,8 +89,10 @@ $('go').onclick=async()=>{
   }catch(e){$('msg').className='err';$('msg').textContent=e.message}
 };
 function field(p,label,type,val){
+  const a=`data-p="${p}" data-t="${(type||'').split(':')[0]}"`;
+  if(type==='img')return `<label>${esc(label)}<input ${a} value="${esc(val)}" placeholder="assets/photo.jpg"></label><label>Upload a new image (JPG or PNG, under 2 MB)<input type="file" accept="image/*" data-up="${p}"></label>`;
+  if(type&&type.startsWith('sel:'))return `<label>${esc(label)}<select ${a}>${type.slice(4).split(',').map(o=>`<option${o===val?' selected':''}>${o}</option>`).join('')}</select></label>`;
   const v=type==='lines'?(val||[]).join('\n'):(val??'');
-  const a=`data-p="${p}" data-t="${type||''}"`;
   return `<label>${esc(label)}${type?`<textarea ${a}>${esc(v)}</textarea>`:`<input ${a} value="${esc(v)}">`}</label>`;
 }
 function draw(){
@@ -110,11 +116,23 @@ $('form').addEventListener('input',e=>{
 $('form').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   const {a,l,i}=b.dataset;const arr=data[l]=data[l]||[];const n=+i;
-  if(a==='add')arr.push(Object.fromEntries(LISTS[l].f.map(([f,,t])=>[f,t==='lines'?[]:''])));
+  if(a==='add')arr.push(Object.fromEntries(LISTS[l].f.map(([f,,t])=>[f,t==='lines'?[]:(t&&t.startsWith('sel:')?t.slice(4).split(',')[0]:'')])));
   if(a==='del'&&confirm('Remove this entry?'))arr.splice(n,1);
   if(a==='up'&&n>0)[arr[n-1],arr[n]]=[arr[n],arr[n-1]];
   if(a==='down'&&n<arr.length-1)[arr[n+1],arr[n]]=[arr[n],arr[n+1]];
   draw();
+});
+$('form').addEventListener('change',async e=>{
+  const f=e.target.files&&e.target.files[0];const p=e.target.dataset.up;if(!f||!p)return;
+  if(f.size>2*1024*1024){$('msg2').className='err';$('msg2').textContent='Image is larger than 2 MB. Resize it and try again.';return}
+  $('msg2').className='';$('msg2').textContent='Uploading image…';
+  try{
+    const b64=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(',')[1]);r.onerror=no;r.readAsDataURL(f)});
+    const name='assets/'+Date.now()+'-'+f.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+    await gh(name,{method:'PUT',body:JSON.stringify({message:'Upload image from site editor',content:b64,branch})});
+    const parts=p.split('.');let o=data;while(parts.length>1)o=o[parts.shift()];o[parts[0]]=name;
+    draw();$('msg2').className='ok';$('msg2').textContent='Image uploaded. Choose Save changes to publish it.';
+  }catch(err){$('msg2').className='err';$('msg2').textContent=err.message}
 });
 $('save').onclick=async()=>{
   $('msg2').className='';$('msg2').textContent='Saving…';
