@@ -11,59 +11,246 @@
     "My work sits between transportation research and hands-on logistics practice. Before my doctoral studies I spent more than six years in freight forwarding, fleet management and port operations in Ghana, clearing cargo through customs, planning routes, inspecting ferry vessels and training operations teams.",
     "My research covers smart ports, sustainable supply chain solutions, inland waterway transport and maritime trade documentation."
   ],
-  "tags": ["Smart Ports", "Sustainable Supply Chains", "Inland Waterways", "Maritime Logistics", "Freight Operations"],
+  "tags": [
+    "Smart Ports",
+    "Sustainable Supply Chains",
+    "Inland Waterways",
+    "Maritime Logistics",
+    "Freight Operations"
+  ],
   "links": [
-    { "label": "Google Scholar", "url": "" },
-    { "label": "ORCID", "url": "" },
-    { "label": "LinkedIn", "url": "" }
+    {
+      "label": "Google Scholar",
+      "url": ""
+    },
+    {
+      "label": "ORCID",
+      "url": ""
+    },
+    {
+      "label": "LinkedIn",
+      "url": ""
+    }
   ],
   "news": [
-    { "date": "Jan 2026", "text": "Presenting at the Transportation Research Board (TRB) Annual Meeting, Washington, D.C." },
-    { "date": "2025", "text": "Smart port review published in Maritime Policy & Management." },
-    { "date": "Oct 2024", "text": "Presented at the Autonomous Trucking Conference." },
-    { "date": "Aug 2024", "text": "Started Ph.D. studies and research assistantship at North Dakota State University." }
+    {
+      "date": "Jan 2026",
+      "text": "Presenting at the Transportation Research Board (TRB) Annual Meeting, Washington, D.C."
+    },
+    {
+      "date": "2025",
+      "text": "Smart port review published in Maritime Policy & Management."
+    },
+    {
+      "date": "Oct 2024",
+      "text": "Presented at the Autonomous Trucking Conference."
+    },
+    {
+      "date": "Aug 2024",
+      "text": "Started Ph.D. studies and research assistantship at North Dakota State University."
+    }
   ],
   "journey": [
-    { "place": "Accra", "label": "B.S.", "dates": "Graduated Jun 2015" },
-    { "place": "Nanjing", "label": "M.S.", "dates": "Graduated Jun 2021" },
-    { "place": "Fargo", "label": "Ph.D.", "dates": "Aug 2024 to 2027 (expected)" }
+    {
+      "place": "Accra",
+      "label": "B.S.",
+      "dates": "Graduated Jun 2015"
+    },
+    {
+      "place": "Nanjing",
+      "label": "M.S.",
+      "dates": "Graduated Jun 2021"
+    },
+    {
+      "place": "Fargo",
+      "label": "Ph.D.",
+      "dates": "Aug 2024 to 2027 (expected)"
+    }
   ],
   "research": [
-    { "title": "Smart ports", "text": "How digital and automated technologies are reshaping port operations, reviewed across a decade of literature." },
-    { "title": "Sustainable supply chains", "text": "Supply chain solutions that balance efficiency, resilience and environmental impact." },
-    { "title": "Inland waterway transport", "text": "Case studies of waterway freight and passenger services and their safety record, with a focus on Ghana's Volta Lake." },
-    { "title": "Maritime trade and documentation", "text": "How shipping documents such as the sea waybill affect efficiency at ports like Tema." },
-    { "title": "Renewable energy in Africa", "text": "Challenges, benefits and recommendations for wind energy development across the continent." }
+    {
+      "title": "Smart ports",
+      "text": "How digital and automated technologies are reshaping port operations, reviewed across a decade of literature."
+    },
+    {
+      "title": "Sustainable supply chains",
+      "text": "Supply chain solutions that balance efficiency, resilience and environmental impact."
+    },
+    {
+      "title": "Inland waterway transport",
+      "text": "Case studies of waterway freight and passenger services and their safety record, with a focus on Ghana's Volta Lake."
+    },
+    {
+      "title": "Maritime trade and documentation",
+      "text": "How shipping documents such as the sea waybill affect efficiency at ports like Tema."
+    },
+    {
+      "title": "Renewable energy in Africa",
+      "text": "Challenges, benefits and recommendations for wind energy development across the continent."
+    }
   ],
   "publications": [
-    { "year": "2025", "type": "journal", "authors": "Boadu, S., Thompson, E.A., et al.", "title": "A decade of Smart Port Concept: a comprehensive review of past, present, and future", "venue": "Maritime Policy & Management", "url": "https://doi.org/10.1080/18366503.2025.2546729", "themes": ["Ports & maritime", "Digital logistics"] },
-    { "year": "2024", "type": "journal", "authors": "Boadu, S., Ottoo, E.", "title": "A comprehensive review on wind energy in Africa: Challenges, benefits and recommendations", "venue": "Renewable and Sustainable Energy Reviews", "url": "https://doi.org/10.1016/j.rser.2023.114035", "themes": ["Energy & sustainability"] },
-    { "year": "2021", "type": "conference", "authors": "Boadu, S., Ebenezer, O., Okoro, M., Setordjie, V.E.", "title": "Waterway Transportation Accidents in Ghana: A Case Study on the Volta River", "venue": "6th International Conference on Transportation Information and Safety", "url": "https://doi.org/10.1109/ICTIS54573.2021.9798457", "themes": ["Inland waterways", "Safety"] },
-    { "year": "2020", "type": "journal", "authors": "Boadu, S., Ottoo, E., Boateng, A.", "title": "Inland Waterway Transportation (IWT) in Ghana: A case study of Volta Lake Transport", "venue": "International Journal of Transportation Science and Technology", "url": "https://doi.org/10.1016/j.ijtst.2020.05.002", "themes": ["Inland waterways"] },
-    { "year": "2020", "type": "journal", "authors": "Boadu, S., Dacosta, E., Edem, V.S.", "title": "Promoting sea waybill in maritime transport: A case study at Tema Port", "venue": "International Journal of Finance", "url": "", "themes": ["Ports & maritime", "Trade documentation"] }
+    {
+      "year": "2025",
+      "type": "journal",
+      "authors": "Boadu, S., Thompson, E.A., et al.",
+      "title": "A decade of Smart Port Concept: a comprehensive review of past, present, and future",
+      "venue": "Maritime Policy & Management",
+      "url": "https://doi.org/10.1080/18366503.2025.2546729",
+      "themes": [
+        "Ports & maritime",
+        "Digital logistics"
+      ]
+    },
+    {
+      "year": "2024",
+      "type": "journal",
+      "authors": "Boadu, S., Ottoo, E.",
+      "title": "A comprehensive review on wind energy in Africa: Challenges, benefits and recommendations",
+      "venue": "Renewable and Sustainable Energy Reviews",
+      "url": "https://doi.org/10.1016/j.rser.2023.114035",
+      "themes": [
+        "Energy & sustainability"
+      ]
+    },
+    {
+      "year": "2021",
+      "type": "conference",
+      "authors": "Boadu, S., Ebenezer, O., Okoro, M., Setordjie, V.E.",
+      "title": "Waterway Transportation Accidents in Ghana: A Case Study on the Volta River",
+      "venue": "6th International Conference on Transportation Information and Safety",
+      "url": "https://doi.org/10.1109/ICTIS54573.2021.9798457",
+      "themes": [
+        "Inland waterways",
+        "Safety"
+      ]
+    },
+    {
+      "year": "2020",
+      "type": "journal",
+      "authors": "Boadu, S., Ottoo, E., Boateng, A.",
+      "title": "Inland Waterway Transportation (IWT) in Ghana: A case study of Volta Lake Transport",
+      "venue": "International Journal of Transportation Science and Technology",
+      "url": "https://doi.org/10.1016/j.ijtst.2020.05.002",
+      "themes": [
+        "Inland waterways"
+      ]
+    },
+    {
+      "year": "2020",
+      "type": "journal",
+      "authors": "Boadu, S., Dacosta, E., Edem, V.S.",
+      "title": "Promoting sea waybill in maritime transport: A case study at Tema Port",
+      "venue": "International Journal of Finance",
+      "url": "",
+      "themes": [
+        "Ports & maritime",
+        "Trade documentation"
+      ]
+    }
   ],
   "experience": [
-    { "role": "Graduate Research Assistant", "org": "North Dakota State University", "place": "Fargo, ND", "dates": "August 2024 to present", "points": ["Conduct transportation research including data collection, statistical analysis and presentation of findings", "Prepare laboratory experiments and coordinate tutorial sessions for undergraduate students", "Organize academic seminars and coordinate research group meetings", "Supervisor: Dr. Ranjit Godavarthy"] },
-    { "role": "Assistant Operations Manager", "org": "Rook Express Logistics Company", "place": "Accra, Ghana", "dates": "May 2017 to July 2018", "points": ["Developed cargo transport plans and optimized routing to improve delivery efficiency", "Managed a fleet of logistics vehicles, including inspection scheduling, maintenance oversight and performance monitoring", "Resolved customer inquiries and complaints, maintaining high service quality standards", "Led periodic training seminars for 15+ operations team members", "Conducted risk assessments and crisis evaluations to ensure operational continuity"] },
-    { "role": "Operations Coordinator", "org": "Volta Lake Transport Company", "place": "Ghana", "dates": "September 2015 to August 2016", "points": ["Inspected ferry vessels and prepared operational reports for management review", "Supervised cargo loading and unloading operations and maintained security protocols", "Trained and evaluated 10+ employees on safety procedures and operational standards"] },
-    { "role": "Customs Clearing Agent", "org": "Prophetic Freight Forwarding Co. Ltd.", "place": "Ghana Ports and Harbors Authority", "dates": "October 2010 to December 2013", "points": ["Processed import, export and transshipment documentation for international cargo", "Coordinated transport arrangements for time-sensitive shipments", "Managed end-to-end customs clearance procedures ensuring regulatory compliance"] }
+    {
+      "role": "Graduate Research Assistant",
+      "org": "North Dakota State University",
+      "place": "Fargo, ND",
+      "dates": "August 2024 to present",
+      "points": [
+        "Conduct transportation research including data collection, statistical analysis and presentation of findings",
+        "Prepare laboratory experiments and coordinate tutorial sessions for undergraduate students",
+        "Organize academic seminars and coordinate research group meetings",
+        "Supervisor: Dr. Ranjit Godavarthy"
+      ]
+    },
+    {
+      "role": "Assistant Operations Manager",
+      "org": "Rook Express Logistics Company",
+      "place": "Accra, Ghana",
+      "dates": "May 2017 to July 2018",
+      "points": [
+        "Developed cargo transport plans and optimized routing to improve delivery efficiency",
+        "Managed a fleet of logistics vehicles, including inspection scheduling, maintenance oversight and performance monitoring",
+        "Resolved customer inquiries and complaints, maintaining high service quality standards",
+        "Led periodic training seminars for 15+ operations team members",
+        "Conducted risk assessments and crisis evaluations to ensure operational continuity"
+      ]
+    },
+    {
+      "role": "Operations Coordinator",
+      "org": "Volta Lake Transport Company",
+      "place": "Ghana",
+      "dates": "September 2015 to August 2016",
+      "points": [
+        "Inspected ferry vessels and prepared operational reports for management review",
+        "Supervised cargo loading and unloading operations and maintained security protocols",
+        "Trained and evaluated 10+ employees on safety procedures and operational standards"
+      ]
+    },
+    {
+      "role": "Customs Clearing Agent",
+      "org": "Prophetic Freight Forwarding Co. Ltd.",
+      "place": "Ghana Ports and Harbors Authority",
+      "dates": "October 2010 to December 2013",
+      "points": [
+        "Processed import, export and transshipment documentation for international cargo",
+        "Coordinated transport arrangements for time-sensitive shipments",
+        "Managed end-to-end customs clearance procedures ensuring regulatory compliance"
+      ]
+    }
   ],
   "education": [
-    { "degree": "Ph.D. candidate", "school": "North Dakota State University, Fargo, ND", "dates": "Expected 2027", "field": "Transportation and Supply Chain Management" },
-    { "degree": "M.S.", "school": "Hohai University, Nanjing, China", "dates": "June 2021", "field": "Harbor, Coastal, and Offshore Engineering" },
-    { "degree": "B.S.", "school": "Regional Maritime University, Accra, Ghana", "dates": "June 2015", "field": "Ports and Shipping Administration" }
+    {
+      "degree": "Ph.D. candidate",
+      "school": "North Dakota State University, Fargo, ND",
+      "dates": "Expected 2027",
+      "field": "Transportation and Supply Chain Management"
+    },
+    {
+      "degree": "M.S.",
+      "school": "Hohai University, Nanjing, China",
+      "dates": "June 2021",
+      "field": "Harbor, Coastal, and Offshore Engineering"
+    },
+    {
+      "degree": "B.S.",
+      "school": "Regional Maritime University, Accra, Ghana",
+      "dates": "June 2015",
+      "field": "Ports and Shipping Administration"
+    }
   ],
   "talks": [
-    { "event": "Transportation Research Board (TRB) Annual Meeting", "place": "Washington, D.C.", "date": "January 2026" },
-    { "event": "Autonomous Trucking Conference", "place": "", "date": "October 2024" }
+    {
+      "event": "Transportation Research Board (TRB) Annual Meeting",
+      "place": "Washington, D.C.",
+      "date": "January 2026"
+    },
+    {
+      "event": "Autonomous Trucking Conference",
+      "place": "",
+      "date": "October 2024"
+    }
   ],
   "community": [
-    { "role": "Volunteer", "org": "Emergency Food Pantry, Fargo, ND", "dates": "October 2024 to present", "text": "Assemble food baskets for community members and support warehouse operations, including loading and unloading deliveries." }
+    {
+      "role": "Volunteer",
+      "org": "Emergency Food Pantry, Fargo, ND",
+      "dates": "October 2024 to present",
+      "text": "Assemble food baskets for community members and support warehouse operations, including loading and unloading deliveries."
+    }
   ],
   "teaching": [
-    { "title": "Undergraduate laboratory and tutorial support", "text": "Prepare laboratory experiments and coordinate tutorial sessions for undergraduate students at North Dakota State University." },
-    { "title": "Research seminars", "text": "Organize academic seminars and coordinate research group meetings." },
-    { "title": "Operations training", "text": "Led safety and operations training for teams of 10 to 15+ employees in Ghana's ferry and logistics industry." }
+    {
+      "title": "Undergraduate laboratory and tutorial support",
+      "text": "Prepare laboratory experiments and coordinate tutorial sessions for undergraduate students at North Dakota State University."
+    },
+    {
+      "title": "Research seminars",
+      "text": "Organize academic seminars and coordinate research group meetings."
+    },
+    {
+      "title": "Operations training",
+      "text": "Led safety and operations training for teams of 10 to 15+ employees in Ghana's ferry and logistics industry."
+    }
   ],
   "resources": [],
   "gallery": []
